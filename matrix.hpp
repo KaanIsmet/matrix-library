@@ -8,11 +8,13 @@
 template <typename T>
 requires same_as<T, std::int64_t>
 class Matrix {
+private:
 	const size_t ROWS;
 	const size_t COLS;
 	std::vector<T> data_;
 
 public:
-	Matrix(int rows, int cols) : ROWS(rows), COLS(cols), data_(rows * cols) {}
+	Matrix(size_t rows, size_t cols) : ROWS(rows), COLS(cols), data_(rows * cols) {}
+	
 
 };		
