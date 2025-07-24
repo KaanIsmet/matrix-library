@@ -52,6 +52,24 @@ public:
 		return true;
 	}
 	
+	Matrix add(Matrix a, Matrix b) {
+		if (a.ROWS != b.ROWS || a.COLS != b.COLS) {
+			std::cerr << "Unable to perform matrix arithmetic operations\n";
+			return nullptr;
+		}
+		int rows = a.ROWS, cols = a.COLS;
+		Matrix result = new Matrix(rows, cols);
+
+		int i = 0, j;
+		while (i < a.ROWS) {
+			j = 0;
+			while (j < a.COLS) {
+				result[i][j] = a[i][j] + b[i][j];
+			}
+		}
+
+		return result;
+	}
 };		
 
 
